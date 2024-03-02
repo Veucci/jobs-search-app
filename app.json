@@ -19,6 +19,9 @@
       "eas": {
         "projectId": "2126d293-c08e-42d9-84f0-cfe8183f253d"
       }
+    },
+    "ios": {
+      "bundleIdentifier": "com.Veucci.cakmalinkedin"
     }
   }
 }

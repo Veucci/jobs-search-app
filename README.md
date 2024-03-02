@@ -10,6 +10,8 @@ npx create-expo-app -e with-router
 npm install
 
 npx expo start --clear
+
+eas build
 ```
 
 ## 📝 Notes

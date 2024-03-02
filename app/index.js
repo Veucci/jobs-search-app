@@ -9,15 +9,16 @@ import { Nearbyjobs, Popularjobs, ScreenHeaderBtn, Welcome} from '../components'
 console.log("Başlatıldı.");
 
 const Home = () => {
+
+    const router = useRouter();
+    const [searchTerm, setSearchTerm] = useState("");
+
     return (
         <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightWhite}}>
             <Stack.Screen
                 options={{
                     headerStyle: { backgroundColor: COLORS.white},
                     headerShadowVisible: false,
-                    headerLeft: () => (
-                        <ScreenHeaderBtn iconUrl = {icons.menu} dimension="100%" />
-                    ),
                     headerRight: () => (
                         <ScreenHeaderBtn iconUrl={images.profile} dimension="100%" />
                     ),
@@ -33,7 +34,14 @@ const Home = () => {
                     }}
                 >
                     <Welcome
-                    
+                        searchTerm={searchTerm}
+                        setSearchTerm={setSearchTerm}
+                        handleClick={() => {
+                            if(searchTerm) {
+                                router.push(`/search/${searchTerm}`)
+                            }
+                        }}
+
                     />
 
                     <Popularjobs />
